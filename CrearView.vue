@@ -34,17 +34,22 @@
                                     placeholder="Ingrese la edad del paciente">
                             </div>
                             <p></p>
-                            <div class="form-group">
-                                <label for="gender">Genero:</label>
-                                <input type="text" class="form-control" name="gender" v-model="paciente.gender" id="gender"
-                                    placeholder="Ingrese el genero del paciente">
-                            </div>
+                            <label for="age">Genero:</label>
+                            <select class="form-select" name="gender" v-model="paciente.gender" id="gender">
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                            </select>
                             <p></p>
-                            <div class="form-group">
-                                <label for="EPS">EPS:</label>
-                                <input type="text" class="form-control" name="EPS" v-model="paciente.EPS" id="EPS"
-                                    placeholder="Ingrese la EPS del paciente">
-                            </div>
+                            <label for="age">EPS:</label>
+                            <select class="form-select" name="EPS" v-model="paciente.EPS" id="EPS">
+                                <option value="Nueva EPS">Nueva EPS</option>
+                                <option value="Sura">Sura</option>
+                                <option value="Sanitas">Sanitas</option>
+                                <option value="Salud Total">Salud Total</option>
+                                <option value="Compensar">Compensar</option>
+                                <option value="Coomeva EPS">Coomeva EPS</option>
+
+                            </select>
                             <p></p>
                         </div>
                     </div>
