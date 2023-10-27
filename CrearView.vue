@@ -1,115 +1,123 @@
 <template>
     <div class="container">
-
-        <div class="card-body">
-            <form v-on:submit.prevent="agregarRegistro">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <p class="text-center"><b>INFORMACION PERSONAL DEL PACIENTE</b></p>
-                            </div>
-                            <p></p>
-                            <div class="form-group">
-                                <label for="doc">Documento de identidad:</label>
-                                <input type="text" class="form-control" name="doc" v-model="paciente.doc" id="doc"
-                                    placeholder="Ingrese el documento del paciente">
-                            </div>
-                            <p></p>
-                            <div class="form-group">
-                                <label for="name">Nombre:</label>
-                                <input type="text" class="form-control" name="name" v-model="paciente.name" id="name"
-                                    placeholder="Ingrese el nombre del paciente">
-                            </div>
-                            <p></p>
-                            <div class="form-group">
-                                <label for="lastname">Apellidos:</label>
-                                <input type="text" class="form-control" name="lastname" v-model="paciente.lastname"
-                                    id="lastname" placeholder="Ingrese el apellido del paciente">
-                            </div>
-                            <p></p>
-                            <div class="form-group">
-                                <label for="age">Edad:</label>
-                                <input type="text" class="form-control" name="age" v-model="paciente.age" id="age"
-                                    placeholder="Ingrese la edad del paciente">
-                            </div>
-                            <p></p>
-                            <label for="age">Genero:</label>
-                            <select class="form-select" name="gender" v-model="paciente.gender" id="gender">
-                                <option value="Masculino">Masculino</option>
-                                <option value="Femenino">Femenino</option>
-                            </select>
-                            <p></p>
-                            <label for="age">EPS:</label>
-                            <select class="form-select" name="EPS" v-model="paciente.EPS" id="EPS">
-                                <option value="Nueva EPS">Nueva EPS</option>
-                                <option value="Sura">Sura</option>
-                                <option value="Sanitas">Sanitas</option>
-                                <option value="Salud Total">Salud Total</option>
-                                <option value="Compensar">Compensar</option>
-                                <option value="Coomeva EPS">Coomeva EPS</option>
-
-                            </select>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <p class="text-center"><b>PRUEBAS DE COAGULACIÓN</b></p>
-                            </div>
-                            <p></p>
-                            <div class="form-group">
-                                <label for="TP">Tiempo de protombina:</label>
-                                <input type="text" class="form-control" name="TP" v-model="paciente.TP" id="TP"
-                                    placeholder="Ingrese el tiempo de Protombina del paciente">
-                            </div>
-                            <p></p>
-                            <div class="form-group">
-                                <label for="PTT">Tiempo de Tromboplastina Parcial:</label>
-                                <input type="text" class="form-control" name="PTT" v-model="paciente.PTT" id="PTT"
-                                    placeholder="Ingrese el tiempo de Tromboplastina Parcial del paciente">
-                            </div>
-                            <p></p>
-                            <div class="form-group">
-                                <label for="AT_lll">Antitrombina III:</label>
-                                <input type="text" class="form-control" name="AT_lll" v-model="paciente.AT_lll" id="AT_lll"
-                                    placeholder="Ingrese el resultado de Antitrombina III del paciente">
-                            </div>
-                            <p></p>
-                            <div class="form-group">
-                                <label for="TT">Tiempo de Trombina:</label>
-                                <input type="text" class="form-control" name="TT" v-model="paciente.TT" id="TT"
-                                    placeholder="Ingrese el Tiempo de Trombina del paciente">
-                            </div>
-                            <p></p>
-                            <div class="form-group">
-                                <label for="fibrinogeno">Fibrinogeno:</label>
-                                <input type="text" class="form-control" name="fibrinogeno" v-model="paciente.fibrinogeno"
-                                    id="fibrinogeno" placeholder="Ingrese el resultado de fibrinogeno del paciente">
-                            </div>
-                            <p></p>
-                        </div>
-
-                    </div>
-
-
+      <div class="card">
+        <div class="card-header1 text-center">
+          <b>Registro Paciente</b>
+        </div>
+        <div class="card-body" style="margin-top: 20px;">
+        <form v-on:submit.prevent="agregarRegistro">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <p class="text-center"><b>INFORMACION PERSONAL DEL PACIENTE</b></p>
                 </div>
                 <p></p>
-                <div class="d-grid gap-2 col-4 mx-auto" role="group" aria-label="">
-                    <button type="submit" class="btn btn-outline-primary ">Enviar</button>
-                    <button type="reset" class="btn btn-outline-danger ">Borrar</button>
-
+                <div class="form-container">
+                <div class="form-group">
+                  <label for="doc">Documento de identidad:</label>
+                  <input type="text" class="form-control" name="doc" v-model="paciente.doc" id="doc"
+                    placeholder="Ingrese el documento del paciente">
                 </div>
-            </form>
+                <p></p>
+                <div class="form-group">
+                  <label for="name">Nombre:</label>
+                  <input type="text" class="form-control" name="name" v-model="paciente.name" id="name"
+                    placeholder="Ingrese el nombre del paciente">
+                </div>
+                <p></p>
+                <div class="form-group">
+                  <label for="lastname">Apellidos:</label>
+                  <input type="text" class="form-control" name="lastname" v-model="paciente.lastname" id="lastname"
+                    placeholder="Ingrese el apellido del paciente">
+                </div>
+                <p></p>
+                <div class="form-group">
+                  <label for="age">Edad:</label>
+                  <input type="text" class="form-control" name="age" v-model="paciente.age" id="age"
+                    placeholder="Ingrese la edad del paciente">
+                </div>
+                <p></p>
+                <label for="age">Género:</label>
+                <select class="form-select" name="gender" v-model="paciente.gender" id="gender">
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                </select>
+                <p></p>
+                <label for="age">EPS:</label>
+                <select class="form-select" name="EPS" v-model="paciente.EPS" id="EPS">
+                  <option value="Nueva EPS">Nueva EPS</option>
+                  <option value="Sura">Sura</option>
+                  <option value="Sanitas">Sanitas</option>
+                  <option value="Salud Total">Salud Total</option>
+                  <option value="Compensar">Compensar</option>
+                  <option value="Coomeva EPS">Coomeva EPS</option>
+                </select>
+                <p></p>
+              </div>
+            </div>
+          </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <p class="text-center"><b>PRUEBAS DE COAGULACIÓN</b></p>
+                </div>
+                <p></p>
+                <div class="form-container">
+                <div class="form-group">
+                  <label for="TP">Tiempo de protrombina:</label>
+                  <input type="text" class="form-control" name="TP" v-model="paciente.TP" id="TP"
+                    placeholder="Ingrese el tiempo de Protrombina del paciente">
+                </div>
+                <p></p>
+                <div class="form-group">
+                  <label for="PTT">Tiempo de Tromboplastina Parcial:</label>
+                  <input type="text" class="form-control" name="PTT" v-model="paciente.PTT" id="PTT"
+                    placeholder="Ingrese el tiempo de Tromboplastina Parcial del paciente">
+                </div>
+                <p></p>
+                <div class="form-group">
+                  <label for="AT_lll">Antitrombina III:</label>
+                  <input type="text" class="form-control" name="AT_lll" v-model="paciente.AT_lll" id="AT_lll"
+                    placeholder="Ingrese el resultado de Antitrombina III del paciente">
+                </div>
+                <p></p>
+                <div class="form-group">
+                  <label for="TT">Tiempo de Trombina:</label>
+                  <input type="text" class="form-control" name="TT" v-model="paciente.TT" id="TT"
+                    placeholder="Ingrese el Tiempo de Trombina del paciente">
+                </div>
+                <p></p>
+                <div class="form-group">
+                  <label for="fibrinógeno">Fibrinógeno:</label>
+                  <input type="text" class="form-control" name="fibrinogeno" v-model="paciente.fibrinogeno"
+                    id="fibrinogeno" placeholder="Ingrese el resultado de fibrinógeno del paciente">
+                </div>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="button-container">
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-outline mx-2 custom-button">Enviar</button>
+                    <button type="reset" class="btn btn-outline mx-2 custom-button-borrar">Borrar</button>
+                </div>
+                </div>
+            </div>
+          </div>
+          </form>
         </div>
-
+        
         <div class="card-footer text-muted">
-            Copyright: Biologic
+          Copyright: BioLogic Company 2023
         </div>
-
+      </div>
     </div>
-</template>
+  </template>
 
 <script>
 export default {
@@ -135,3 +143,68 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.custom-button {
+    background-color: transparent; 
+    border: 1px solid #060707; 
+    color: #060707; 
+    transition: background-color 0.3s; 
+    cursor: pointer; 
+  }
+  
+  .custom-button:hover {
+    border: 1px solid #40AEB3;; 
+    color: #40AEB3; 
+  }
+
+  .custom-button-borrar{
+    background-color: transparent; 
+    border: 1px solid #060707; 
+    color: #060707; 
+    transition: background-color 0.3s; 
+    cursor: pointer; 
+  }
+  .custom-button-borrar:hover {
+    border: 1px solid #D6534D;
+    color: #D6534D; 
+  }
+
+
+  .card-header1 { 
+    background: #8FD6C8;
+    color: #000000;
+    padding: 1rem; 
+    margin: 0; 
+    max-height: 50px; 
+  }
+
+  
+
+  .form-container {
+    max-width: 100%; 
+    max-height: 420px; 
+
+  /* height: 400px; */
+  }
+
+  input[type="text"],
+select {
+    width: 100%; 
+    padding: 5px; 
+    font-size: 14px; 
+    
+}
+
+
+select {
+    height:30px;
+    font-size: 14px; 
+}
+
+.button-container {
+  margin-top: -60px; 
+}
+
+
+</style>
