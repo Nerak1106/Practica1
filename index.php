@@ -74,9 +74,17 @@ if(isset($_GET["actualizar"])){
     $data = json_decode(file_get_contents("php://input"));
     $id=(isset($data->id))?$data->id:$_GET["actualizar"];
     $doc=$data->doc;
-	$name=$data->name;
-	$lastname=$data->lastname;  
-	$sqlPatient = mysqli_query($conexionBD,"UPDATE patients SET doc='$doc', name='$name',lastname='$lastname' WHERE id='$id'");
+    $name=$data->name;
+    $lastname=$data->lastname;
+    $age=$data->age;    
+    $gender=$data->gender;
+    $EPS=$data->EPS;
+    $TP=$data->TP;
+    $PTT=$data->PTT;
+    $AT_lll=$data->AT_lll;
+    $TT=$data->TT; 
+    $fibrinogeno=$data->fibrinogeno;
+	$sqlPatient = mysqli_query($conexionBD,"UPDATE patients SET doc='$doc', name='$name',lastname='$lastname', age='$age', gender='$gender', EPS='$EPS', TP='$TP', PTT='$PTT', AT_lll='$AT_lll', TT='$TT', fibrinogeno='$fibrinogeno' WHERE id='$id'");
 	echo json_encode(["success"=>1 ]);
 	exit();
     
