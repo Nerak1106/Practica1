@@ -33,6 +33,15 @@ if (isset($_GET["consultar"])){
         } else{  echo json_encode(["success"=>0]); }
 }
 
+if (isset($_GET["documento"])){
+    $sqlPatient = mysqli_query($conexionBD,"SELECT * FROM patients WHERE doc=".$_GET["documento"]);
+    if(mysqli_num_rows($sqlPatient) > 0){
+        $patient = mysqli_fetch_all($sqlPatient,MYSQLI_ASSOC);
+        echo json_encode($patient); 
+        exit();
+    } else{  echo json_encode(["success"=>0]); }
+}
+
 /* Borra un registro de paciente de la tabla patients, teniendo como criterio de búsqueda 
    la variable 'id' que viene en el $_GET["borrar"] 
    */
@@ -49,7 +58,7 @@ if(isset($_GET["insertar"])){
         $data = json_decode(file_get_contents("php://input"));
 		$id_=$data->id;
         $doc=$data->doc;
-		$name=$data->name;
+        $name=$data->name;
         $lastname=$data->lastname;
         $age=$data->age;    
         $gender=$data->gender;
@@ -74,7 +83,7 @@ if(isset($_GET["actualizar"])){
     $data = json_decode(file_get_contents("php://input"));
     $id=(isset($data->id))?$data->id:$_GET["actualizar"];
     $doc=$data->doc;
-    $name=$data->name;
+	$name=$data->name;
     $lastname=$data->lastname;
     $age=$data->age;    
     $gender=$data->gender;
