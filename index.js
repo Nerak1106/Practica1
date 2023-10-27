@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import CrearView from '../components/CrearView.vue'
 import ListarView from '../components/ListarView.vue'
 import EditarView from '../components/EditarView.vue'
+import ExamenesView from '../components/ExamenesView.vue'
 
 const routes = [
   {
@@ -26,6 +27,11 @@ const routes = [
     component: EditarView
   },
   {
+    path: '/examenes/:id',
+    name: 'examenes',
+    component: ExamenesView
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
@@ -39,5 +45,8 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+export default router
+
 
 export default router
